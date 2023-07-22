@@ -53,3 +53,12 @@ resource "aws_key_pair" "k8s" {
   key_name   = "assignment2"
   public_key = file("${path.module}/assignment2.pub")
 }
+
+#Amazon ECR Repository for Docker webapp and MySQL images
+resource "aws_ecr_repository" "aliya-webapp" {
+  name = "aliya-webapp"
+}
+
+resource "aws_ecr_repository" "aliya-mysql" {
+  name = "aliya-mysql"
+}
